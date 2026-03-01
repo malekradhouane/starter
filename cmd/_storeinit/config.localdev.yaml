@@ -1,0 +1,7 @@
+storages:
+  - name: pg-trippy-api
+    enabled: true
+    driver: pg
+    dbURI: "postgresql://admin:trippy-api@localhost:5435/trippydb?sslmode=disable"
+    schemaFolder: "file://migrations/pg/trippy"
+    forceSchemaVersion: 1

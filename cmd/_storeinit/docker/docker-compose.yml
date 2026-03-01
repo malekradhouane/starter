@@ -1,0 +1,26 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgres-init.sh:/docker-entrypoint-initdb.d/init.sh
+    environment:
+      - POSTGRES_PASSWORD=pgdba
+      # - POSTGRES_USER=admin
+      # - POSTGRES_DB=trippy-api
+      - TRIPPY_USER=trippy-api
+      - TRIPPY_PASS=admin
+      - TRIPPY_DB=trippydb
+
+
+networks:
+  trippy-compose-network:
+    driver: bridge
+
+volumes:
+  mongodb:
+  mongodb_express:
+  postgres:

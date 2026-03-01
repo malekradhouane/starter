@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  trippy-api:
+    image: ghcr.io/trippy-tn/trippy-api:latest
+    container_name: trippy-api
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    environment:
+      - MODE=dev
+      - STORAGES_POSTGRESQL_HOST=postgres
+      - STORAGES_POSTGRESQL_PORT=5432
+      - STORAGES_POSTGRESQL_TRIPPYDB=trippydb
+      - STORAGES_POSTGRESQL_TRIPPYLOGIN=admin
+      - STORAGES_POSTGRESQL_TRIPPYPASS=trippy-api
+    networks:
+      - trippy-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: trippy-api-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=trippydb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=trippy-api
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+    networks:
+      - trippy-network
+
+networks:
+  trippy-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

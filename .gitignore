@@ -1,0 +1,10 @@
+.env.env
+    .env.local
+    .idea/
+    .DS_Store
+    bin/
+    build/
+    tmp/
+
+    config/config.yaml
+    .github/workflows/kubeconfig.yaml

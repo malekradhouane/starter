@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>You're invited to Trippy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 180px;
+            height: auto;
+        }
+
+        .brand-name {
+            color: #E53E3E;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .content h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+            padding: 12px 20px;
+            background-color: #4B5563;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999999;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img alt="Trippy Logo" src="https://11z1s.mjt.lu/img2/11z1s/15c89006-0f90-4080-b47c-b7fff149eaa3/content">
+    <div class="content">
+        <h1>
+            Activate your account
+            </h1>
+        <p>To activate your account, we need to verify your email address. Simply click on the link:</p>
+
+        <a class="button" href="{{.Link}}">Activate Account</a>
+
+        <p>Or copy and paste this link into your browser:</p>
+        <p><a href="{{.Link}}">{{.Link}}</a></p>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Trippy. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
+

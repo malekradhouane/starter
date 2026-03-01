@@ -1,0 +1,15 @@
+services:
+  postgresdb:
+    container_name: postgresdb
+    image: postgres:15-alpine
+    ports:
+      - 5435:5432
+    environment:
+      - POSTGRES_PASSWORD=trippy-api
+      - POSTGRES_USER=postgres
+      # variables used by init script:
+      - TRIPPY_DB=trippydb
+      - TRIPPY_USER=admin
+      - TRIPPY_PASS=trippy-api
+    volumes:
+      - ./postgres-init.sh:/docker-entrypoint-initdb.d/init.sh
